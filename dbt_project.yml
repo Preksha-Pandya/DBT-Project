@@ -37,8 +37,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   European_Fashion:
-    # Applies to all files under models/example/
     staging:
-      +materialized: table
-    intermediate:
-      ++materialized: table
+      +materialized: table    
+
+    Intermediate:
+      +materialized: table    

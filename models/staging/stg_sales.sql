@@ -1,4 +1,4 @@
-select sale_id::number as number,
+select sale_id::number as sale_id,
     channel::varchar(50) as channel,
     discounted::number as discounted,
     total_amount::varchar(50) as total_amount,
