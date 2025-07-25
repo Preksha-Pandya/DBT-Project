@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: European_Fashion
+    description: It contains the dataset used by our project
+    database: raw
+    schema: raw_schema
+    tables:
+      - name: campaigns
+        description: contains data related to all fashion campaigns
+      - name: channels
+        description: contains data related to channels
+      - name: customers
+        description: conatins data related to customer info
+      - name: products
+        description: contains data related to fashion products
+      - name: sales
+        description: contains data related to sales of product
+      - name: salesitems
+        description: contains data related to items sold
+      - name: stocks 
+        description: contains data related to in stock product
