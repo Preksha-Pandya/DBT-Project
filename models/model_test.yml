@@ -1,0 +1,70 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: Customer master data says who is buying.
+    columns:
+      - name: customer_id
+        description: primary_key
+        tests:
+          - unique
+          - not_null
+  - name: stg_products
+    description: conatins details of what's being sold
+    columns:
+      - name: product_id
+        description: Primary_key
+        tests:
+        - unique
+        - not_null
+  - name: stg_sales
+    description: contains data related to selling
+    columns:
+      - name: sale_id
+        description: Primary_key
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: foreign_key
+        tests:
+          - relationships:
+              field: customer_id
+              to: ref('stg_customers')
+  - name: stg_salesitems
+    description: sales of items data
+    columns:
+      - name: item_id
+        description: Primary_Key
+        tests:
+          - unique
+          - not_null
+      - name: sale_id
+        description: Foreign_Key
+        tests:
+          - relationships:
+              field: sale_id
+              to: ref('stg_sales')
+      - name: product_id
+        description: Foreign_key
+        tests:
+          - relationships:
+              to: ref('stg_products')
+              field: product_id
+  - name: stg_stocks
+    description: gives the data of stock of the product
+    columns:
+      - name: product_id
+        description: Foreign_key
+        tests:
+          - relationships:
+              to: ref('stg_products')
+              field: product_id
+  - name: stg_campaigns
+    description: contains data related to all the campaigns
+    columns:
+      - name: campaign_id
+        description: Primary_key
+        tests:
+          - unique
+          - not_null
