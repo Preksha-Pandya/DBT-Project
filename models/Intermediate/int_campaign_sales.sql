@@ -17,7 +17,7 @@ customers_base as (
   select * from {{ref('stg_customers')}}
 ),
 products_base as (
-  select *, round((catalog_price - cost_price)) as profit_margin from {{ref('clean_products')}}
+  select *, {{profit_margin('catalog_price','cost_price')}} as profit_margin from {{ref('clean_products')}}
 ),
 campaigns_base as (
   select * from {{ref('clean_campaigns')}}
