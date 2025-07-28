@@ -1,0 +1,23 @@
+snapshots:
+  - name: products_snapshots
+    description: snapshot table of products data to track its changes.
+    relation: source('European_Fashion', 'products')
+    config:
+      schema: snapshots
+      database: Final
+      unique_key: Product_id
+      strategy: check
+      check_cols:
+        [
+          "product_id",
+          "product_name",
+          "category",
+          "brand",
+          "color",
+          "size",
+          "catalog_price",
+          "cost_price",
+          "gender",
+        ]
+      
+      dbt_valid_to_current: null
