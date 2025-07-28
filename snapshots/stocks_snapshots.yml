@@ -1,0 +1,14 @@
+snapshots:
+  - name: stocks_snapshots
+    description: snapshot table for stocks data of the product to track its changes.
+    relation: source('European_Fashion', 'stocks')
+    config:
+      schema: snapshots
+      database: Final
+      unique_key: [country,product_id]
+      strategy: check
+      check_cols:
+        [
+         'country','product_id','stock_quantity'
+        ]
+      dbt_valid_to_current: null

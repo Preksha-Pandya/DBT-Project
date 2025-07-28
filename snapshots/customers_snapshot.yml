@@ -1,0 +1,14 @@
+snapshots:
+  - name: customers_snapshots
+    description: snapshot table for customer data to track its changes.
+    relation: source('European_Fashion', 'customers')
+    config:
+      schema: snapshots
+      database: Final
+      unique_key: customer_id
+      strategy: check
+      check_cols:
+        [
+         'customer_id','country','age_range','signup_date'
+        ]
+      dbt_valid_to_current: null
