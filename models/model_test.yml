@@ -68,3 +68,27 @@ models:
         tests:
           - unique
           - not_null
+  - name: clean_campaigns
+    description: done some cleansing in the campaigns data
+  - name: clean_products
+    description: done some cleansing in products data
+  - name: clean_salesitems
+    description: done some changes in salesitems data
+  - name: int_campaign_sales
+    description: Gives data for all sales transactions, including product metadata, customer info, active campaign, and profit margin.
+  - name: int_channel_performance
+    description: model to understand channel performance trends, where customers prefer to shop
+  - name: int_customer_orders
+    description: model to understand customer order frequency, total spent,cltv,etc
+  - name: int_product_sales
+    description: model to understand the metrics at product level
+  - name: int_product_inventory
+    description: model to understand the stock details and product metrics 
+  - name: mrt_campaign_performance
+    description: model for clean layer 
+  - name: mrt_channel_performance
+    description: model for clean layer
+  - name: mrt_customer_lifetime
+    description: model for clean layer
+  - name: mrt_product_performance
+    description: model for clean layer
