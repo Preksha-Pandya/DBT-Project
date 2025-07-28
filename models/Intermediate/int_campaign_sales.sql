@@ -21,6 +21,7 @@ select
   cb.customer_id,
   cb.country as customer_country,
   pb.product_id,
+  pb.product_name,
   pb.category,
   pb.brand,
   pb.gender as product_gender,
@@ -32,12 +33,12 @@ select
   camp.campaign_name as active_campaign,
   pb.profit_margin
 from sales_base sb
-left join customers_base cb 
+join customers_base cb 
 on sb.customer_id = cb.customer_id
-left join items_base ib 
+join items_base ib 
 on sb.sale_id = ib.sale_id
-left join products_base pb 
+join products_base pb 
 on ib.product_id = pb.product_id
-left join campaigns_base camp 
+join campaigns_base camp 
 on sb.channel = camp.channel
 where sb.sale_date between camp.start_date and camp.end_date

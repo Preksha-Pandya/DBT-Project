@@ -13,3 +13,4 @@ select
     datediff('day', max(sale_date), current_date) as days_since_last_purchase
 from customer_orders
 group by customer_id, customer_country
+order by customer_id
