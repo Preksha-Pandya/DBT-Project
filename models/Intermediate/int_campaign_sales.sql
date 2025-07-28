@@ -1,5 +1,14 @@
+{{
+    config(
+        materialized='incremental'
+    )
+}}
 with sales_base as (
-  select * from {{ref('stg_sales')}}
+  select * 
+  from {{ ref('stg_sales') }}
+  {% if is_incremental() %}
+  where sale_date > (select max(sale_date) from {{ this }})
+  {% endif %}
 ),
 items_base as (
   select * from {{ref('clean_salesitems')}}
