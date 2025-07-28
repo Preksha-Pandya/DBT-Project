@@ -15,6 +15,6 @@ select
     s.stock_quantity,
     p.catalog_price,
     p.cost_price,
-    round((p.catalog_price - p.cost_price)) as profit_margin
+    {{profit_margin('catalog_price','cost_price')}} as profit_margin
 from products p
 left join stocks s on p.product_id = s.product_id
