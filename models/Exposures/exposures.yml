@@ -1,0 +1,42 @@
+exposures:
+  - name: customer_dashboard
+    type: dashboard
+    depends_on:
+      - ref('mrt_customer_lifetime_value')
+    owner:
+      name: preksha pandya
+      email: preksha@example.com
+    maturity: high
+    description: exposure for customer_dashboard
+
+  - name: marketing_performance_dashboard
+    type: dashboard
+    depends_on:
+      - ref('mrt_campaign_performance')
+      - ref('mrt_channel_performance')
+    owner:
+      name: preksha pandya
+      email: preksha@example.com
+    maturity: high
+    description: exposure for marketing_performance_dashboard
+
+  - name: products_dashboard
+    type: dashboard
+    depends_on:
+      - ref('mrt_product_performance')
+    owner:
+      name: preksha pandya
+      email: preksha@example.com
+    maturity: high
+    description: exposure for products_dashboard
+
+  - name: daily_sales_dashboard
+    type: dashboard
+    depends_on:
+      - ref('mrt_daily_sales_summary')
+    owner:
+      name: preksha pandya
+      email: preksha@example.com
+    maturity: high
+    description: exposure for daily_sales_dashboard
+      
