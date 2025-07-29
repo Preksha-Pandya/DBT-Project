@@ -17,4 +17,4 @@ select
     p.cost_price,
     {{profit_margin('catalog_price','cost_price')}} as profit_margin
 from products p
-left join stocks s on p.product_id = s.product_id
+join stocks s on p.product_id = s.product_id
