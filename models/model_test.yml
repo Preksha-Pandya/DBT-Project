@@ -92,3 +92,5 @@ models:
     description: model for clean layer
   - name: mrt_product_performance
     description: model for clean layer
+  - name: mrt_daily_sales_summary
+    description: model for clean layer gives daily sales details.
