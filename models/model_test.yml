@@ -88,7 +88,7 @@ models:
     description: model for clean layer 
   - name: mrt_channel_performance
     description: model for clean layer
-  - name: mrt_customer_lifetime
+  - name: mrt_customer_lifetime_value
     description: model for clean layer
   - name: mrt_product_performance
     description: model for clean layer
