@@ -1,15 +1,6 @@
-{{ config(
-    materialized='incremental',
-    unique_key='customer_id',
-    incremental_strategy='merge'
-) }}
-
 with customer_orders as (
     select * 
     from {{ ref('int_campaign_sales') }}
-    {% if is_incremental() %}
-    where sale_date > (select max(last_purchase_date) from {{ this }})
-    {% endif %}
 )
 
 select 

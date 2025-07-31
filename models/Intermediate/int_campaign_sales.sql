@@ -1,14 +1,12 @@
-{{ config(
-    materialized='incremental'
-) }}
-
+{{
+    config(
+        materialized='incremental'
+    )
+}}
 with sales_base as (
   select * 
-  from {{ ref('stg_sales') }},
-  {% if is_incremental() %}
-  where sale_date > (select max(sale_date) from {{ this }})
-  {% endif %}
-),
+  from {{ ref('stg_sales') }}
+  ),
 items_base as (
   select * from {{ref('clean_salesitems')}}
 ),
@@ -20,8 +18,8 @@ products_base as (
 ),
 campaigns_base as (
   select * from {{ref('clean_campaigns')}}
-)
-
+),
+final as (
 select
   sb.sale_id,
   sb.sale_date,
@@ -50,3 +48,11 @@ on ib.product_id = pb.product_id
 join campaigns_base camp 
 on sb.channel = camp.channel
 where sb.sale_date between camp.start_date and camp.end_date
+order by sb.sale_date desc )
+
+select * from final
+
+{% if is_incremental() %}
+where
+sale_date >= (select max(sale_date) from {{this}})
+{% endif %}
