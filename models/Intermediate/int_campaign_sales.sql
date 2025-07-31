@@ -1,8 +1,3 @@
-{{
-    config(
-        materialized='incremental'
-    )
-}}
 with sales_base as (
   select * 
   from {{ ref('stg_sales') }}
@@ -51,8 +46,3 @@ where sb.sale_date between camp.start_date and camp.end_date
 order by sb.sale_date desc )
 
 select * from final
-
-{% if is_incremental() %}
-where
-sale_date >= (select max(sale_date) from {{this}})
-{% endif %}
