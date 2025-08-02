@@ -13,3 +13,4 @@ select
     avg(unit_price) as avg_selling_price
 from int_product_sales
 group by product_id, category, brand, product_gender
+order by total_quantity_sold desc
