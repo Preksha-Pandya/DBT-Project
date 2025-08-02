@@ -76,6 +76,7 @@ models:
     description: done some changes in salesitems data
   - name: int_campaign_sales
     description: Gives data for all sales transactions, including product metadata, customer info, active campaign, and profit margin.
+  - name: int_sales_Data
   - name: int_channel_performance
     description: model to understand channel performance trends, where customers prefer to shop
   - name: int_customer_orders
@@ -94,3 +95,6 @@ models:
     description: model for clean layer
   - name: mrt_daily_sales_summary
     description: model for clean layer gives daily sales details.
+  - name: mrt_inventory_Stock
+    description: model for stock level details for the products
+  

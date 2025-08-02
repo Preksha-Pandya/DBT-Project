@@ -1,5 +1,5 @@
 with int_product_sales as (
-    select * from {{ ref('int_campaign_sales') }}
+    select * from {{ ref('int_sales_data') }}
 )
 
 select
