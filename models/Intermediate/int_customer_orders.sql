@@ -1,6 +1,6 @@
 with customer_orders as (
     select * 
-    from {{ ref('int_campaign_sales') }}
+    from {{ ref('int_sales_data') }}
 )
 
 select 
