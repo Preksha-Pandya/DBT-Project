@@ -3,6 +3,7 @@ exposures:
     type: dashboard
     depends_on:
       - ref('mrt_customer_lifetime_value')
+      - ref('mrt_customer_rfm')
     owner:
       name: preksha pandya
       email: preksha@example.com
@@ -14,6 +15,7 @@ exposures:
     depends_on:
       - ref('mrt_campaign_performance')
       - ref('mrt_channel_performance')
+      - ref('mrt_channel_brand_sales')
     owner:
       name: preksha pandya
       email: preksha@example.com
