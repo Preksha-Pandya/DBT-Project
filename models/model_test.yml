@@ -97,4 +97,8 @@ models:
     description: model for clean layer gives daily sales details.
   - name: mrt_inventory_Stock
     description: model for stock level details for the products
+  - name: mrt_customer_rfm
+    description: model for recency,frequency and monetary data of customer
+  - name: mrt_channel_brand_sales
+    description: model for channel and brand wise sales data
   
