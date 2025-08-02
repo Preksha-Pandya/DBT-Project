@@ -39,4 +39,14 @@ exposures:
       email: preksha@example.com
     maturity: high
     description: exposure for daily_sales_dashboard
+
+  - name: inventory_stock_dashboard
+    type: dashboard
+    depends_on:
+      - ref('mrt_inventory_stock')
+    owner:
+      name: preksha pandya
+      email: preksha@example.com  
+    maturity: high
+    description: exposure for inventory_stock_dashboard
       
