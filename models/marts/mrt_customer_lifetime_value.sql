@@ -12,5 +12,5 @@ select
     last_purchase_date as most_recent_purchase,
     days_since_last_purchase
 from cltv
-order by total_spent
+order by total_spent desc
 

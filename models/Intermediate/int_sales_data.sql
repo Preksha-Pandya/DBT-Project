@@ -31,6 +31,7 @@ select
     p.brand,
     p.gender as product_gender,
     i.quantity,
+    i.original_price,
     i.unit_price,
     i.discount_applied,
     i.discount_percent,
