@@ -1,1 +1,1 @@
-select * from raw.raw_schema.customers
+select * from {{ ref('stg_sales') }}
