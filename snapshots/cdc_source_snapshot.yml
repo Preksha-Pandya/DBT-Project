@@ -1,0 +1,15 @@
+snapshots:
+  - name: cdc_source_snapshots
+    description: snapshot table for cdc data 
+    relation: source('CDC_Problem', 'source_location')
+    config:
+      schema: snapshots
+      database: Final
+      unique_key: [location_id,city,state,zipcode]
+      strategy: check
+      check_cols:
+        [
+         'location_id','city','state','zipcode'
+        ]
+      dbt_valid_to_current: null
+      hard_deletes: new_record

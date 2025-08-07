@@ -20,3 +20,9 @@ sources:
         description: contains data related to items sold
       - name: stocks 
         description: contains data related to in stock product
+  - name: CDC_Problem
+    database: demo
+    schema: my_schema
+    tables:
+      - name: source_location
+    
